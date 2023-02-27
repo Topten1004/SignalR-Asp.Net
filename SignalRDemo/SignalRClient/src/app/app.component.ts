@@ -27,6 +27,7 @@ export class AppComponent {
 
     this.hubConnectionBuilder.on('SendCommands', (data: any) => {
       this.offers.push(data);
+      console.log(data);
     }); 
 
 }
