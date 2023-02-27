@@ -1,0 +1,7 @@
+
+  <h2>Data loaded from the Web API:</h2>
+  <div *ngIf="offers.length>0" class="alert alert-warning" role="alert">
+    <li *ngFor="let item of offers"> 
+      Offers: {{item}}
+    </li> 
+  </div>
