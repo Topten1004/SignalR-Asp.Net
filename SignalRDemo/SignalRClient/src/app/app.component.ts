@@ -17,7 +17,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.hubConnectionBuilder = new HubConnectionBuilder()
-      .withUrl('https://localhost:7219/offers')
+      .withUrl('https://10.10.18.211:5001/commands')
       .configureLogging(LogLevel.Information)
       .build();
     this.hubConnectionBuilder
@@ -25,9 +25,9 @@ export class AppComponent {
       .then(() => console.log('Connection started.......!'))
       .catch(err => console.log('Error while connect with server'));
 
-    this.hubConnectionBuilder.on('SendOffersToUser', (data: any) => {
+    this.hubConnectionBuilder.on('SendCommands', (data: any) => {
       this.offers.push(data);
-    });
+    }); 
 
 }
 }
